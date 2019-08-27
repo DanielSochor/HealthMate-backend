@@ -1,13 +1,11 @@
 //loads environmental variables into process.env global variable injected by node at runtime
 require('dotenv').config();
 require("./config/connection");
-var cors = require('cors')
-
-
+//var cors = require('cors')
 
 const express = require("express");
 const app = express();
-app.use(cors())
+//app.use(cors())
 const path = require("path");
 const env = process.env.NODE_ENV || 'development';
 const reactConfig = require(path.join(__dirname, './config/config.static.json'))[env];

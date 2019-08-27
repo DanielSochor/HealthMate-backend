@@ -1,5 +1,5 @@
 {
-  "name": "healthy-people",
+  "name": "healthy-back-end",
   "version": "1.0.0",
   "engines": {
     "node": "10.15.1"
@@ -12,7 +12,8 @@
     "start:devv": "concurrently \"npm start\" \"npm run client-start\"",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd ../healthy-front-end && npm run start",
-    "seed": "node scripts/seedDB.js"
+    "seed": "node scripts/seedDB.js",
+    "build": "cd client && npm run build"
   },
   "author": "",
   "license": "ISC",
@@ -34,6 +35,6 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/healthy-people/healthy-back-end"
+    "url": "https://github.com/DanielSochor/HealthMate-backend"
   }
 }
