@@ -13,7 +13,7 @@
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "client": "cd ../healthy-front-end && npm run start",
     "seed": "node scripts/seedDB.js",
-    "build": "cd client && npm run build"
+    "build": "cd client && npm run build && cd .."
   },
   "author": "",
   "license": "ISC",
