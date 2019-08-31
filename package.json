@@ -12,7 +12,7 @@
     "start:devv": "concurrently \"npm start\" \"npm run client-start\"",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "clientt": "https://healthy-people-front-end.herokuapp.com/",
-    "client": "clientt && npm run start",
+    "client": "cd clientt && npm run start",
     "seed": "node scripts/seedDB.js"
   },
   "author": "",
