@@ -1,5 +1,7 @@
-const express = require("express");
-const cors = require("cors");
+require('dotenv').config();
+
+const express = require('express');
+const cors = require('cors');
 const app = express();
 const PORT = process.env.PORT || 3001;
 
@@ -9,12 +11,12 @@ app.use(express.json());
 app.use(cors());
 
 // Serve up static assets
-if (process.env.NODE_ENV === "production") {
-  app.use(express.static("client/build"));
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static('client/build'));
 }
 
 // Routes
-require("./controllers/routes")(app);
+require('./controllers/routes')(app);
 
 // Start the API server
 app.listen(PORT, () =>
