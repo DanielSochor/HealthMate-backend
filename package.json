@@ -8,8 +8,7 @@
     "start:prod": "node server.js",
     "start:dev": "concurrently \"nodemon --ignore 'client/*'\" \"npm run client\"",
     "dev": "concurrently \"npm start\" \"npm run client\"",
-    "client": "cd ../HealthMate-frontend && npm run start",
-    "build": "cd ../HealthMate-frontend && npm run build"
+    "client": "cd ../HealthMate-frontend && npm run start"
   },
   "author": "",
   "license": "ISC",
