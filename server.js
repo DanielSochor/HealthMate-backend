@@ -16,7 +16,7 @@ app.use(cors());
 
 // Serve up static assets
 if (process.env.NODE_ENV === 'production') {
-  app.use(express.static('client/build'));
+  app.use(express.static("https://healthy-people-front-end.herokuapp.com/"));
 }
 
 // Routes
