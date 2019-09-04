@@ -9,6 +9,7 @@ let config = {
         mysql:{
             url: process.env.JAWSDB_URL,
         },
+        url: 'https://healthy-people-front-end.herokuapp.com/',
         apiKeys:{}
     }
 };
