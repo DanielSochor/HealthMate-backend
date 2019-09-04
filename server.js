@@ -3,9 +3,13 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const app = express();
+const path = require('path');
+const env = process.env.NODE_ENV || 'development';
+const reactConfig = require(path.join(__dirname, '/config/config.static.json'))[env];
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
+app.use(express.static(path.join(__dirname, reactConfig))); // serving react files
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 app.use(cors());

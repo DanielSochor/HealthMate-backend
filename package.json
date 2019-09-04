@@ -20,6 +20,7 @@
     "hashpass": "0.0.0",
     "mysql": "^2.17.1",
     "nodemon": "^1.19.1",
+    "path": "^0.12.7",
     "uuid": "^3.3.2"
   },
   "repository": {
