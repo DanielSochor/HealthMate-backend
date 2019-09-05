@@ -14,7 +14,6 @@ const PORT = process.env.PORT || 3001;
 var logger = require('morgan')
 app.use(logger("dev"));
 
-
 // Define middleware here
 // when set to true, the URL-encoded data will parsed with the qs library instead of the querystring library
 app.use(express.urlencoded({ extended: true }));

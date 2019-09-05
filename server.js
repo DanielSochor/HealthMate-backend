@@ -17,9 +17,6 @@ app.use(cors());
 // Serve up static assets
 if (process.env.NODE_ENV === 'production') {
   app.use(express.static("https://healthy-people-front-end.herokuapp.com/"));
-  url = "https://healthy-people-front-end.herokuapp.com/";
-} else if (process.env.NODE_ENV === 'development'){
-  url = "http://localhost:3000";
 }
 
 // Routes
