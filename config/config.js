@@ -3,6 +3,7 @@ let config = {
         mysql:{
             url: process.env.DB_URL,
         },
+        url: "http://localhost:3001",
         apiKeys:{}
     },
     prod: {
