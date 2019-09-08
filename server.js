@@ -4,13 +4,26 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
+var whitelist = ['https://healthy-people-front-end.herokuapp.com/']
+var corsOption = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+
+app.use(cors(corsOption));
+
 const path = require('path');
 const env = process.env.NODE_ENV || 'development';
 const reactConfig = require(path.join(__dirname, '/config/config.static.json'))[env];
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
-app.use(cors());
+//app.use(cors());
 app.use(express.static(path.join(__dirname, reactConfig))); // serving react files
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
