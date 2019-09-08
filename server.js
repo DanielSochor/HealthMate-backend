@@ -9,10 +9,10 @@ const reactConfig = require(path.join(__dirname, '/config/config.static.json'))[
 const PORT = process.env.PORT || 3001;
 
 // Define middleware here
+app.use(cors());
 app.use(express.static(path.join(__dirname, reactConfig))); // serving react files
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(cors());
 
 // Serve up static assets
 if (process.env.NODE_ENV === 'production') {
