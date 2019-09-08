@@ -3,6 +3,9 @@ require('dotenv').config();
 const express = require('express');
 const cors = require('cors');
 const app = express();
+
+app.use(cors());
+
 const path = require('path');
 const env = process.env.NODE_ENV || 'development';
 const reactConfig = require(path.join(__dirname, '/config/config.static.json'))[env];
