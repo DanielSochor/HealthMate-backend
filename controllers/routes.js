@@ -19,7 +19,7 @@ module.exports = function(app) {
     app.delete("/api/user/login", function(request, response) {
         user.logout(request, response);
     });
-    app.get("/api/user", cors(corsOptions), authorizer.authenticate, function(request, response) {
+    app.get("/api/user", authorizer.authenticate, function(request, response) {
         user.getUserBySession(request, response);
     });
     app.get("/api/user/:id", authorizer.authenticate, function(request, response) {

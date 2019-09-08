@@ -5,19 +5,17 @@ const cors = require('cors');
 const app = express();
 
 var whitelist = ['https://healthy-people-front-end.herokuapp.com/']
-var corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1 || !origin) {
-      callback(null, true)
-    } else {
-      callback(new Error('Not allowed by CORS'))
-    }
+var corsOptionsDelegate = function (request, callback) {
+  var corsOptions;
+  if (whitelist.indexOf(request.header('Origin')) !== -1){
+    corsOptions = { origin: true }
+  } else {
+    corsOptions = { origin: false }
   }
+  callback(null, corsOptions)
 }
 
-
-
-app.use(cors(corsOptions));
+app.use(cors(corsOptionsDelegate));
 
 const path = require('path');
 const env = process.env.NODE_ENV || 'development';
