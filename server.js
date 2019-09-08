@@ -5,7 +5,7 @@ const cors = require('cors');
 const app = express();
 
 var whitelist = ['https://healthy-people-front-end.herokuapp.com/']
-var corsOption = {
+var corsOptions = {
   origin: function (origin, callback) {
     if (whitelist.indexOf(origin) !== -1) {
       callback(null, true)
@@ -15,7 +15,9 @@ var corsOption = {
   }
 }
 
-app.use(cors(corsOption));
+
+
+app.use(cors(corsOptions));
 
 const path = require('path');
 const env = process.env.NODE_ENV || 'development';
