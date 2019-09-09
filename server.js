@@ -4,7 +4,7 @@ const express = require('express');
 const cors = require('cors');
 const app = express();
 
-app.options('*', cors());
+//app.options('*', cors());
 
 app.use(cors());
 app.use((request, response, next) => {
@@ -15,16 +15,16 @@ app.use((request, response, next) => {
   next();
 });
 
-var whitelist = ['https://healthy-people-front-end.herokuapp.com/']
-var corsOptionsDelegate = function (request, callback) {
-  var corsOptions;
-  if (whitelist.indexOf(request.header('Origin')) !== -1){
-    corsOptions = { origin: true }
-  } else {
-    corsOptions = { origin: false }
-  }
-  callback(null, corsOptions)
-}
+// var whitelist = ['https://healthy-people-front-end.herokuapp.com/']
+// var corsOptionsDelegate = function (request, callback) {
+//   var corsOptions;
+//   if (whitelist.indexOf(request.header('Origin')) !== -1){
+//     corsOptions = { origin: true }
+//   } else {
+//     corsOptions = { origin: false }
+//   }
+//   callback(null, corsOptions)
+// }
 
 // app.use(cors(corsOptionsDelegate));
 
