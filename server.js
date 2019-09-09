@@ -5,9 +5,11 @@ const cors = require('cors');
 const app = express();
 
 //enables pre-flight across the board
-app.options('*', cors());
 
 app.use(cors());
+
+app.options('*', cors());
+
 // app.use((request, response, next) => {
 //   response.header('Access-Control-Allow-Origin','*');
 //   response.header('Access-Control-Allow-Headers: *', 'Origin, X-Requested-With, Content-Type, Accept');
