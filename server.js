@@ -10,6 +10,7 @@ app.use(cors());
 app.use(function(request, response, next){
   response.header("Access-Control-Allow-Origin","*");
   response.header("Access-Control-Allow-Headers","Origin, X-Requested-With, Content-Type, Accept");
+  response.header('Access-Control-Allow-Credentials', true);
   response.header("Access-Control-Allow-Methods","POST, GET, OPTIONS, PUT, DELETE");
   next();
 });
