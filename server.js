@@ -5,7 +5,7 @@ const cors = require('cors');
 const app = express();
 
 //enables pre-flight across the board
-//app.options('*', cors());
+app.options('*', cors());
 
 app.use(cors());
 // app.use((request, response, next) => {
